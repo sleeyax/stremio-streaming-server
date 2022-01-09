@@ -2,7 +2,7 @@ FROM node:14.15.0-alpine
 
 WORKDIR /stremio
 
-ARG VERSION=v4.4.148
+ARG VERSION=4.4.148
 
 RUN apk add --no-cache wget ffmpeg
 RUN wget http://dl.strem.io/four/v${VERSION}/server.js
