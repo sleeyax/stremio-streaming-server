@@ -5,8 +5,8 @@ WORKDIR /stremio
 ARG VERSION=master
 
 RUN apk add --no-cache wget ffmpeg
-RUN wget http://dl.strem.io/four/${VERSION}/server.js
-RUN wget http://dl.strem.io/four/${VERSION}/stremio.asar
+RUN wget https://dl.strem.io/four/${VERSION}/server.js
+RUN wget https://dl.strem.io/four/${VERSION}/stremio.asar
 
 # apply patch to skip CORS headers verification
 # see: https://github.com/sleeyax/stremio-streaming-server/issues/5
