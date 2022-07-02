@@ -4,7 +4,7 @@ WORKDIR /stremio
 
 ARG VERSION=master
 
-RUN apk add --no-cache wget ffmpeg
+RUN apk add --no-cache openssl-dev wget ffmpeg
 RUN wget https://dl.strem.io/four/${VERSION}/server.js
 RUN wget https://dl.strem.io/four/${VERSION}/stremio.asar
 
