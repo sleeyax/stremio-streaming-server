@@ -13,7 +13,7 @@ This will run the **latest version** of the streaming server, map the configurat
 ### Advanced
 Normally the latest version should be fine but if for some reason you'd like to run a different version of the streaming server, follow these steps:
 1. Clone this repository `$ git clone https://github.com/sleeyax/stremio-streaming-server && cd stremio-streaming-server`.
-2. Change the `VERSION` build argument. For example: `ARG VERSION=v4.4.148`
+2. Change the `VERSION` build argument. For example: `ARG VERSION=v4.4.148`. You can also override this argument with the `--build-arg` flag when you run the command below.
 3. rebuild the container `$ docker build -t sleeyax/stremio-streaming-server .` or `docker buildx build --platform linux/arm64,linux/arm/v7 -t sleeyax/stremio-streaming-server .` for multi-arch builds.
 
 ---
