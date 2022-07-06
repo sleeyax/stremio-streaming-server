@@ -6,9 +6,9 @@ If you're interested in building Stremio components yourself, check out the inst
 ## Usage
 Execute the following command to pull and run the docker image:
 
-`$ docker run -p 11470:11470 -v ${PWD}:/root/.stremio-server --name=stremio-streaming-server sleeyax/stremio-streaming-server`
+`$ docker run -p 11470:11470 -e FIX_CORS=1 -v ${PWD}:/root/.stremio-server --name=stremio-streaming-server sleeyax/stremio-streaming-server`
 
-This will run the **latest version** of the streaming server, map the configuration directory `.stremio-server/` to your current working directory `${PWD}` and expose it on port `11470`.
+This will run the **latest version** of the streaming server, map the configuration directory `.stremio-server/` to your current working directory `${PWD}` and expose it on port `11470`. A patch to allow cross origin requests from all domains is also applied here. See below for more information about [patches](#patches).
 
 ### Patches
 By default, all streaming server dependencies are downloaded and stored unmodified.
@@ -21,6 +21,14 @@ Available patches:
 `FORCE_HTTPS`
 
 Enable this if you are using a reverse HTTPS proxy (e.g localtunnel) to access the streaming server. See [#10#issuecomment-1174508779](https://github.com/sleeyax/stremio-streaming-server/issues/10#issuecomment-1174508779) for more information about why enabling this is recommended.
+
+`FIX_UNSUPPORTED_MEDIA`
+
+Attempts to fix 'unsupported media' errors. Only enable this if you are experiencing this exact issue as this patch is not well tested ([source](https://github.com/n0bodysec/docker-images/blob/main/stremio-web/patches.sh)).
+
+`FIX_CORS`
+
+Fixes browser [CORS](https://developer.mozilla.org/en-US/docs/Web/HTTP/CORS) issues. Strongly recommended to enable this if you're accessing the Stremio web interface via a domain that isn't whitelisted. See [#5](https://github.com/sleeyax/stremio-streaming-server/issues/5) for more details.
 
 ### Advanced
 Normally the latest version should be fine but if for some reason you'd like to run a different version of the streaming server, follow these steps:
