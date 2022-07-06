@@ -1,6 +1,6 @@
 FROM node:14.15.0-alpine
 
-WORKDIR stremio
+WORKDIR /stremio
 
 ARG VERSION=master
 ENV FORCE_HTTPS=0
