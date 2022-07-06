@@ -7,6 +7,7 @@ ARG VERSION=master
 RUN apk add --no-cache openssl-dev wget ffmpeg
 RUN wget https://dl.strem.io/four/${VERSION}/server.js
 RUN wget https://dl.strem.io/four/${VERSION}/stremio.asar
+
 COPY start.sh .
 
 RUN chmod +x start.sh
