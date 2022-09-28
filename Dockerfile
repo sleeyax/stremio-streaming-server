@@ -2,7 +2,7 @@ FROM node:14.15.0-alpine
 
 WORKDIR /stremio
 
-ARG VERSION=master
+ARG VERSION=v4.19.0
 
 RUN apk add --no-cache openssl-dev wget ffmpeg
 RUN wget https://dl.strem.io/four/${VERSION}/server.js
@@ -16,7 +16,7 @@ VOLUME ["/root/.stremio-server"]
 
 ENV FORCE_HTTPS=0
 ENV FIX_UNSUPPORTED_MEDIA=0
-ENV FIX_CORS=0
+ENV NO_CORS=1
 
 EXPOSE 11470
 
