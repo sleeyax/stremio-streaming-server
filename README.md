@@ -3,6 +3,8 @@ This docker image allows you to run Stremio's streaming server as a standalone s
 
 If you're interested in building Stremio components yourself, check out the instructions at the [stremio-shell](https://github.com/Stremio/stremio-shell/) repository.
 
+Every 24 hours a bot checks for a new version of Stremio's streaming server. When a new version is found, a new tag will be published to this repository, which in turn triggers a rebuild on docker hub. Please open an issue if you believe a version is missing.
+
 ## Usage
 Execute the following command to pull and run the docker image:
 
