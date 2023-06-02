@@ -1,3 +1,9 @@
+# ⚠️ The OFFICIAL docker image is avalable here: https://github.com/Stremio/server-docker. 
+
+**This project is no longer maintained.** 
+
+---
+
 # Portable Streaming Server for Stremio
 This docker image allows you to run Stremio's streaming server as a standalone server (i.e. separate from the desktop application). You could drop a streaming server container on a separate linux-based server and remotely connect your Stremio interface to it. Or, you could run this together with Stremio 5 (a.k.a [stremio-web](https://github.com/Stremio/stremio-web), which is currently in **alpha**).
 
